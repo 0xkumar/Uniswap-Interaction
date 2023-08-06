@@ -62,14 +62,16 @@ contract UniswapV2FlashSwap is IUniswapV2Callee {
         // Transfer flash swap fee from caller
         weth.transferFrom(caller, address(this), fee);
 
-        console.log("amount of ether deposited in WETH BEFORE : ", weth.balanceOf(address(this)));
+        console.log("amount 2 :", weth.balanceOf(address(this)));
 
-        console.log(weth.balanceOf(caller));
+        // console.log("amount of ether deposited in WETH BEFORE : ", weth.balanceOf(address(this)));
+
+        // console.log(weth.balanceOf(caller));
 
         // Repay
         weth.transfer(address(pair), amountToRepay);
-        console.log("amount of ether deposited in WETH AFTER : ", weth.balanceOf(address(this)));
-        console.log("This means transaction failed :",weth.balanceOf(caller));
+        // console.log("amount of ether deposited in WETH AFTER : ", weth.balanceOf(address(this)));
+        // console.log("This means transaction failed :",weth.balanceOf(caller));
     }
 }
 
